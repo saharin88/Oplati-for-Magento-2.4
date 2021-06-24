@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <payment>
+            <oplati>
+                <active>1</active>
+                <model>Oplati\Oplati\Model\Oplati</model>
+                <order_status>processing</order_status>
+                <title>Oplati</title>
+                <test>1</test>
+                <qrsize>180</qrsize>
+                <check_status_timeout>3</check_status_timeout>
+            </oplati>
+        </payment>
+    </default>
+</config>

@@ -1,0 +1,19 @@
+<?php
+
+/**
+ * @var \Oplati\Oplati\Block\Oplati $block
+ */
+$dynamicQR = $this->getDynamicQR();
+$qrsize    = $block->getConfigValue('payment/oplati/qrsize');
+?>
+<div id="oplati" style="text-align: center;" data-timeout="<?= ($block->getConfigValue('payment/oplati/check_status_timeout') * 1000) ?>">
+    <div class="page-title">
+        <h3><?php echo __('Для оплаты отсканируйте QR код или нажмите на ссылку') ?></h3>
+    </div>
+    <p>
+        <img src="https://chart.googleapis.com/chart?cht=qr&chl=<?= $dynamicQR ?>&chs=<?= $qrsize ?>x<?= $qrsize ?>&choe=UTF-8&chld=L|2" alt="<?= __('Оплатить через «Оплати»') ?>" style="display: inline;">
+    </p>
+    <p>
+        <a class="btn btn-default" href="https://getapp.o-plati.by/map/?app_link=<?= $dynamicQR ?>" target="_blank"><?= __('Оплатить через «Оплати»') ?></a>
+    </p>
+</div>
